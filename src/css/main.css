@@ -3,7 +3,8 @@
 :root{
     --bgleft: #3862a7;
     --bgright: #1b3b6f;
-    color: #edf3fd;
+    --white: #edf3fd;
+    color: var(--white);
 }
 
 /*norma*/
@@ -65,7 +66,7 @@ main{
 
 main > div {
     grid-column-start: span 3;
-    padding: 0px 100px ;
+    padding: 10px 25px ;
 }
 
 #sign-up{
@@ -109,6 +110,50 @@ main > div {
 
 h2{
     margin: 0px;
+}
+
+#sign-up{
+    background-color: #f9f9f9;
+    position: relative;
+    left: -65px;
+    margin: 10px;
+    border-radius: 10px;
+    color: var(--bgright);
+    box-shadow: 15px 15px #22090996;
+    justify-content: center;
+    min-width: 540px;
+}
+
+form{
+    flex: 1;
+    padding: 0.8rem 0;
+}
+
+ul{
+    display: grid;
+    gap: 2.2rem;
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: repeat(2, auto);
+    margin: 0px;
+    padding: 20px;
+}
+
+li{
+    display: flex;
+    flex-direction: column;
+}
+
+input{
+    max-width: 300px;
+}
+
+#done{
+    position: absolute;
+    bottom: -120px;
+    left: 150px;
+    color: var(--white);
+    display: flex;
+    gap: 3rem;
 }
 
 /*fancy stuff*/
