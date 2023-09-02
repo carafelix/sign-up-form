@@ -1,0 +1,22 @@
+/* :root{
+    --red: red;
+}
+
+:root{
+    background-color: var(--red);
+} */
+
+html {
+    width: 100vw;
+    height: 100vh;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+}
+
+#left, #right {
+    width: 50vh;
+}
+
