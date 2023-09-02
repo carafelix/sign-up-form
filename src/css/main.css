@@ -1,20 +1,38 @@
-/* :root{
-    --red: red;
-}
+/*vars*/
 
 :root{
-    background-color: var(--red);
-} */
+    --bgleft: #3862a7;
+    --bgright: #1b3b6f;
+    color: #edf3fd;
+}
+
 /*norma*/
+
+*{
+    box-sizing: border-box;
+}
+
 
 ul{
     list-style-type: none;
 }
 
+
 html {
     width: 100vw;
     height: 100vh;
 }
+
+
+a{
+    color: #89e1ff;
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+    font-weight: 500;
+}
+ 
+/*config*/
 
 body {
     height: 100vh;
@@ -23,10 +41,18 @@ body {
 
 #left, #right {
     display: flex;
-    width: 50vw;
     height: 100vh;
     justify-content: center;
     align-items: center;
+}
+
+#left{
+    width: 40vw;
+    background-color: var(--bgleft);
+}
+#right{
+    background-color: var(--bgright);
+    width: 60vw;
 }
 
 main{
@@ -39,6 +65,7 @@ main{
 
 main > div {
     grid-column-start: span 3;
+    padding: 0px 100px ;
 }
 
 #sign-up{
@@ -47,10 +74,61 @@ main > div {
     flex: 1 0 100%;
 }
 
+#brand{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
 
+#logo{
+    position: relative;
+    align-self: baseline;
+    padding: 20px 15px;
+}
 
-#ilu{
-    width: 600px;
+.hero-container{
+    position: absolute;
+    top: 125px;
+    left: 45px;
+}
+
+.hero-container>h2{
+    font-size: 30px;
+}
+
+#ilu>svg{
+    min-height: 500px;
+}
+
+#logo > img{
+    width: 100px;
+}
+
+h2{
+    margin: 0px;
+}
+
+/*fancy stuff*/
+
+a::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #00bfff;
+    transform-origin: bottom left;
+    transition: transform 0.3s ease-out;
+}
+
+a:hover::after{
+    transform: scaleX(1);
+    transform-origin: bottom right;
 }
 
 
