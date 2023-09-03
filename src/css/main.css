@@ -4,13 +4,19 @@
     --bgleft: #3862a7;
     --bgright: #1b3b6f;
     --white: #edf3fd;
-    color: var(--white);
-}
+    --greeny: #00aab9;
+    
+    
+    --sm: new-breakpoint(min-width 320px);
+    --med: new-breakpoint(min-width 768px);
+    --lg: new-breakpoint(min-width 1024px);
+    }
 
 /*norma*/
 
 *{
     box-sizing: border-box;
+    outline: none;
 }
 
 
@@ -18,10 +24,15 @@ ul{
     list-style-type: none;
 }
 
+p{
+  margin: 0px;
+}
 
 html {
     width: 100vw;
     height: 100vh;
+    color: var(--white);
+
 }
 
 
@@ -61,18 +72,12 @@ main{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, auto);
-    align-items: center;
+    align-items: start;
 }
 
 main > div {
     grid-column-start: span 3;
     padding: 10px 25px ;
-}
-
-#sign-up{
-    align-self: start;
-    display: flex;
-    flex: 1 0 100%;
 }
 
 #brand{
@@ -87,7 +92,7 @@ main > div {
 #logo{
     position: relative;
     align-self: baseline;
-    padding: 20px 15px;
+    padding: 20px 60px;
 }
 
 .hero-container{
@@ -100,8 +105,9 @@ main > div {
     font-size: 30px;
 }
 
-#ilu>svg{
-    min-height: 500px;
+#ilu{
+    display: flex;
+    width: max(300px,90%);
 }
 
 #logo > img{
@@ -112,16 +118,50 @@ h2{
     margin: 0px;
 }
 
+#pretext{
+    font-size: 1.65rem;
+    max-width: 65ch;
+    line-height: 3rem;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.211);
+    margin-top: 20px;
+    display: flex;
+    align-items: start;
+}
+
+.comillas{
+    font-size: 3rem;
+}
+
+#pretext p span.safe {
+    position: absolute;
+    right: 20px;
+    font-size: 1.25rem;
+}
+
 #sign-up{
+    align-self: start;
+    display: flex;
+    flex: 1 0 100%;
     background-color: #f9f9f9;
     position: relative;
-    left: -65px;
-    margin: 10px;
+    left: -80px;
+    margin-left: 10px;
     border-radius: 10px;
     color: var(--bgright);
     box-shadow: 15px 15px #22090996;
     justify-content: center;
     min-width: 540px;
+}
+
+legend{
+  position: absolute;
+  border-radius: 10px;
+  background-color: var(--greeny);
+  top: -28px;
+  padding: 16px;
+  font-size: larger;
+  color: white;
 }
 
 form{
@@ -131,29 +171,41 @@ form{
 
 ul{
     display: grid;
-    gap: 2.2rem;
+    gap: 2rem;
     grid-template-columns: repeat(2, auto);
     grid-template-rows: repeat(2, auto);
-    margin: 0px;
     padding: 20px;
+    margin-left: 40px;
 }
 
 li{
     display: flex;
     flex-direction: column;
+    position: relative;
 }
 
 input{
+    margin-top: 8px;
     max-width: 300px;
 }
 
 #done{
     position: absolute;
-    bottom: -120px;
-    left: 150px;
+    bottom: -80px;
+    left: 100px;
     color: var(--white);
     display: flex;
     gap: 3rem;
+    font-size: 1.25rem;
+    align-items: center;
+}
+
+#done button{
+  background-color: var(--greeny);
+  border: none;
+  color: white;
+  padding: 0.8rem;
+  border-radius: 10px;
 }
 
 /*fancy stuff*/
@@ -166,7 +218,6 @@ a::after{
     height: 2px;
     bottom: 0;
     left: 0;
-    background-color: #00bfff;
     transform-origin: bottom left;
     transition: transform 0.3s ease-out;
 }
@@ -177,3 +228,60 @@ a:hover::after{
 }
 
 
+
+.glitchy {
+  font-family: "Raleway", sans-serif;
+  font-weight: 700;
+  text-decoration: none;
+  text-transform: uppercase;
+  position: relative;
+  transform: translate(0, 0);
+  color: #fff;
+  letter-spacing: 5px;
+}
+.glitchy:before, .glitchy:after {
+  display: block;
+  content: 'Ubik';
+  text-transform: uppercase;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0.8;
+}
+.glitchy:after {
+  color: #f0f;
+  z-index: -2;
+}
+.glitchy:before {
+  color: #0ff;
+  z-index: -1;
+}
+.glitchy:hover:before {
+  animation: glitchy 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
+}
+.glitchy:hover:after {
+  animation: glitchy 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse both infinite;
+}
+
+@keyframes glitchy {
+  0% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(-5px, 5px);
+  }
+  40% {
+    transform: translate(-5px, -5px);
+  }
+  60% {
+    transform: translate(5px, 5px);
+  }
+  80% {
+    transform: translate(5px, -5px);
+  }
+  to {
+    transform: translate(0);
+  }
+}
