@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign up</title>
-    <link rel="stylesheet" href="./node_modules/normalize.css/normalize.css">
+    <link rel="stylesheet" href="./src/css/normalize.css">
     <link rel="stylesheet" href="./src/css/main.css">
     <link rel="stylesheet" href="./src/css/glitch.css">
     <script src="./src/js/validation.js" defer></script>
@@ -47,7 +47,7 @@
                                 <label for="email">Email</label>
                                 <input type="email" name="user_email" id="user-email" required aria-required="true">
                             </li>
-                            <li>
+                            <li id="phone-li">
                                 <label for="user-phone">Phone</label>
                                 <fieldset>
                                     <select name="country_code" title="The prefix for your country phone number" required aria-required="true">
@@ -276,7 +276,9 @@
                             </li>
                             <li>
                                 <label for="user-pass">Password <em>*must be super strong*</em></label>
-                                <input type="password" name="user_pass" id="user-pass" required aria-required="true" pattern=(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" title="Minimum length 8 chars and must contain: An Upper case and lower case letter, a number and a special character">
+                                <input type="password" name="user_pass" id="user-pass" required aria-required="true"
+                                pattern="^(?=.*\d|.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).{8,}$"
+                                title="Minimum length 8 characters and must contain: an uppercase letter, a lowercase letter, a number, and a special character">
                                 <meter max="5" low="3" high="1" optimum="5" value="0">Constrain matches 0/5</meter>
                             </li>
                             <li>

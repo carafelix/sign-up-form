@@ -12,41 +12,105 @@ passConfirm.addEventListener('blur', ()=>checkPassMatches(pass,passConfirm))
 
 function checkPassMatches(a,b){
 
-    // if already visited do not steal al the fukin atention
+    if(b.className === 'error'){
 
-    if(a.value !== b.value){
-        a.classList.add('error')
-        b.classList.add('error')
+        if(a.value !== b.value || b.value === ''){
+            b.classList.add('error')
+            b.classList.remove('valid');
+    
+            b.setCustomValidity("Passwords does not match");
 
-        b.setCustomValidity("Passwords does not match");
-        b.reportValidity();
-        passConfirm.removeEventListener('blur', ()=>checkPassMatches(pass,passConfirm))
+            return
+    
+        } else {
+            b.classList.remove('error');
+            b.classList.add('valid');
+            
+            b.setCustomValidity('');
+            b.reportValidity();
 
-        return
+            passConfirm.addEventListener('blur', ()=>checkPassMatches(pass,passConfirm));
 
+            return // toggle err div off
+        }
     } else {
-        a.classList.remove('error');
-        b.classList.remove('error');
-        
-        b.setCustomValidity('');
-        b.reportValidity();
-        return // toggle err div off
+        if(a.value !== b.value || b.value === ''){
+            b.classList.add('error')
+            b.classList.remove('valid');
+    
+            b.setCustomValidity("Passwords does not match");
+            b.reportValidity();
+    
+            passConfirm.removeEventListener('blur', ()=>checkPassMatches(pass,passConfirm));
+            passConfirm.addEventListener('input', ()=>checkPassMatches(pass,passConfirm));
+    
+            return
+    
+        } else {
+            b.classList.remove('error');
+            b.classList.add('valid');
+            
+            b.setCustomValidity('');
+            b.reportValidity();
+    
+            return // toggle err div off
+        }
     }
 }
 
 // valid state 
 
 inputs.forEach(el=>{
-    if(el.validity.valid === true){
-        el.classList.add('valid')
-    } else {
-        el.addEventListener('input', (el)=>{
-            if(el.target.validity.valid === true){
-                el.target.classList.add('valid')
-            }
-        })
+    if(el === passConfirm){
+        return
     }
-})
+
+    if(el.localName === 'select'){
+        if(el.validity.valid === true){
+            el.classList.add('valid');
+            el.addEventListener('input', (el) => inputValidation(el))
+            return
+        } else {
+            el.addEventListener('input', (el) => inputValidation(el))
+            return
+        }
+    }
+
+    if(el.validity.valid === true){
+        el.classList.add('valid');
+        el.addEventListener('blur', (el) => inputValidation(el))
+    } else {
+        el.addEventListener('blur', (el) => inputValidation(el))
+    }
+});
+
+function inputValidation(el){
+
+    if(el.target.className.includes('error')){
+
+        if(el.target.validity.valid === true){
+            el.target.classList.add('valid');
+            el.target.classList.remove('error');
+
+        } else {
+            el.target.classList.remove('valid')
+            el.target.classList.add('error')
+        } 
+
+    } else {
+
+        if(el.target.validity.valid === true){
+            el.target.classList.add('valid')
+            el.target.classList.remove('error')
+            
+        } else {
+            el.target.classList.remove('valid')
+            el.target.classList.add('error')
+
+            el.target.addEventListener('input', (el) => inputValidation(el))
+        } 
+    }
+}
 
 // meter 
 
