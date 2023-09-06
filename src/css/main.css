@@ -1,4 +1,6 @@
 /*vars*/
+/*now I notice, i should have make the background in
+a linear gradient and just make 3 divs, header main y footer*/
 
 :root{
     --bgleft: #3862a7;
@@ -335,9 +337,6 @@ meter{
 }
 
 
-
-
-
 .glitchy {
   font-family: "Raleway", sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-weight: 700;
@@ -409,10 +408,15 @@ meter{
 
 
 
-/* 
 
-@media (max-width: 1250px) {
-  .bigwrap{
-    flex-direction: column;
+@media (max-width: 1225px) {
+  #sign-up{
+    left: 0;
   }
-} */
+}
+
+@media (max-width: 1050px) {
+  #pretext{
+    left: 0;
+  }
+}
