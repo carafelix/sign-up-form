@@ -8,7 +8,7 @@
 ## Features 
 - Form validates using web-native HTML5 [Constrain Validation API](https://developer.mozilla.org/en-US/docs/Web/HTML/Constraint_validation)
 - Followed [Forms guidelines](https://www.nngroup.com/articles/errors-forms-design-guidelines/) for correct UX
-
+- Both UBIK words with cool [glitches animations](./credits.md)
 
 ## Valuable things I learned
 - Do not underestimate any proyect
