@@ -4,6 +4,7 @@ const inputs = document.querySelectorAll('[required]')
 const pass = document.getElementById('user-pass');
 const passConfirm = document.getElementById('user-pass-confirm');
 const meter = document.querySelector('meter');
+const submit = document.querySelector('input[type="submit"]')
 
 
 // Passwords
@@ -41,7 +42,6 @@ function checkPassMatches(a,b){
             b.setCustomValidity("Passwords does not match");
             b.reportValidity();
     
-            passConfirm.removeEventListener('blur', ()=>checkPassMatches(pass,passConfirm));
             passConfirm.addEventListener('input', ()=>checkPassMatches(pass,passConfirm));
     
             return
@@ -132,3 +132,5 @@ pass.addEventListener('input',()=>{
     meter.innerText = `Requiered constrains ${matches}/5`
 
 })
+
+submit.addEventListener('submit', ()=>checkPassMatches(pass,passConfirm))

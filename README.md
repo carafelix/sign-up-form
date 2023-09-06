@@ -16,12 +16,13 @@
 - Useful usage of css functions and selectors.
 - Do not overcomplicate the layout
 
-## Could be improve
-- Make use of the styling classes like ::valid ::invalid
+## Could be improved
+- Make use of the styling pseudoclasses like ::valid ::invalid
+- Shorter and more readable CSS
 
 ## Things I notice along the way
 - HTML fundamental structure should have been a simple header, main, footer instead of dividing the whole page in 2. The light-blue/blue background could have been recreated via a linear-gradient, this way would have been more easy to make the site responsive for medium/small screen devices and overall easier to understand html structure. I thought of remaking the whole html/css for that but the proyect isn't original enough to make it worth it.
 
 ## To-do
 - media queries for small scren devices
-- To-don't, but was an idea: to make a 'cold-pack revelation' animation when clicking the 'ubik' word, and making the elixir of ubiquity old store man appears  
+- To-don't, but was an idea: to make a 'cold-pack revelation' animation when clicking the 'ubik' word, and making the elixir of ubiquity old store man appears

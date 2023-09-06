@@ -308,6 +308,7 @@ select.valid{
 
 meter{
   position: relative;
+  left: 10px;
   margin-top: 3px;
   width: clamp(200px,50%,300px);
   min-height: 20px;
