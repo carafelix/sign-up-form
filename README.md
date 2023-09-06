@@ -1,7 +1,7 @@
 <div align="center"> 
 <h1>A Sign Up form</h1>
 <h2><em>Typers typing</em></h2>
-<img src="./assets/img/signup.gif" width="750">
+<img src="./assets/img/signup.gif">
 </div>
 </br>
 
