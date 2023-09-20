@@ -11,7 +11,7 @@
 - Both UBIK words with cool [glitches animations](./credits.md)
 
 ## Valuable things I learned
-- Do not underestimate any proyect
+- Do not underestimate any proyecttttttttt
 - Plan ahead the fundamental building blocks of the proyect, even for <i>small proyect like this one</i>. As they say, the more you plan the least you work.
 - Useful usage of css functions and selectors.
 - Do not overcomplicate the layout
